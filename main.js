@@ -4,7 +4,7 @@ const desktopMenu = document.querySelector('.desktop-menu');
 const burgerMenu = document.querySelector('.menu');
 const mobileMenu = document.querySelector('.mobile-menu');
 const menuCartIcon = document.querySelector('.navbar-shopping-cart');
-const aside = document.querySelector('.product-detail');
+const shoppingCartContainer = document.querySelector('#shoppingCartContainer');
 const cardContainer = document.querySelector('.cards-container');
 
 
@@ -19,11 +19,11 @@ function toggleDesktopMenu() {
        //If there is no class INACTIVE
        //add the class
        //addClass
-    const isAsideClosed = aside.classList.contains('inactive');
+    const isAsideClosed = shoppingCartContainer.classList.contains('inactive');
     
     if(!isAsideClosed){
         //si mobileMenu esta open hay que cerrarlo
-        aside.classList.add('inactive');
+        shoppingCartContainer.classList.add('inactive');
     }
     desktopMenu.classList.toggle('inactive');
     // if (desktopMenu.classList.contains('inactive')){
@@ -34,11 +34,11 @@ function toggleDesktopMenu() {
 }
 
 function toggleMobileMenu() {
-    const isAsideClosed = aside.classList.contains('inactive');
+    const isAsideClosed = shoppingCartContainer.classList.contains('inactive');
     
     if(!isAsideClosed){
         //si mobileMenu esta open hay que cerrarlo
-        aside.classList.add('inactive');
+        shoppingCartContainer.classList.add('inactive');
     }
     mobileMenu.classList.toggle('inactive');
 }
@@ -58,7 +58,7 @@ function toggleAsideCart() {
         desktopMenu.classList.add('inactive');
     }
     
-    aside.classList.toggle('inactive');
+    shoppingCartContainer.classList.toggle('inactive');
 }
 
 
@@ -93,17 +93,19 @@ function renderProducts (arr){
         productInfo.classList.add('product-info');
     
         const  productInfoDiv = document.createElement('div');
+        
         const  productPrice = document.createElement('p');
         productPrice.innerText = 'Mxn ' + product.price;
         const  productName = document.createElement('p');
         productName.innerText =  product.name;
-    
+
         productInfoDiv.appendChild(productPrice);
-        const  productInfoFigure = document.createElement('figure');
         productInfoDiv.appendChild(productName);
+
+        const  productInfoFigure = document.createElement('figure');
         const  productImgCart = document.createElement('img');
         productImgCart.setAttribute('src', './icons/bt_add_to_cart.svg');
-        productInfoFigure.appendChild(productImgCart);
+        // productInfoFigure.appendChild(productImgCart);
         // productImg.setAttribute('src', product.image);
     
         productInfoFigure.appendChild(productImgCart);
@@ -135,5 +137,5 @@ function renderProducts (arr){
     }
 }
 
-//se crea una funcion que recibe un array y regresa la concatenacion de los productos
+//se crea una funcion que recibe un array y regresa la concatenacion de los
 renderProducts(productList);
