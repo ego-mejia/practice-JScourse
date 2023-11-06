@@ -9,7 +9,7 @@ Taking this course helped me realize how JS itself is incredible powerful and fu
 and React is a catalyzer, enhancing the features already existing in JS.
 
 It was hard for me to accept that I wasn't able to understand and going back to learn the very basics,
-but I decided to be humble and realistic because this process is about consistence not speed.
+but I decided to be humble and realistic.
 
 🪲 My funniest most frustrating bug was to spend a WHOLE day looking for a typo; It turned out it
 was just a *space* in my CSS style sheet: .product-card .product-info {}
